@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Self Upgrade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>SELF UPGRADE</h1>
+  <div class="container">
+    <h1>SELF UPGRADE</h1>
+    <p class="subtitle">System Status: Online</p>
 
-<div class="panel">
-  <h3>PLAYER STATUS</h3>
-  <p id="levelText"></p>
-  <p>Total XP: <span id="xpText"></span></p>
+    <!-- LEVEL + XP -->
+    <div class="level-box">
+      <h2 id="levelTitle">Level 1</h2>
+      <div class="xp-bar">
+        <div id="xpFill"></div>
+      </div>
+      <p><span id="xpText">0</span> XP</p>
+    </div>
 
-  <div class="xp-bar">
-    <div class="xp-fill" id="xpFill"></div>
+    <!-- STREAK -->
+    <p class="streak">🔥 Streak: <span id="streakCount">0</span></p>
+
+    <!-- QUESTS -->
+    <div class="quests">
+
+      <div class="quest main">
+        <h3>⚔️ Main Quest</h3>
+        <button onclick="completeMain()">Complete Main Quest</button>
+      </div>
+
+      <div class="quest side">
+        <h3>🧩 Side Quest</h3>
+        <p id="sideQuestText">Loading...</p>
+        <button onclick="completeSide()">Complete Side Quest</button>
+      </div>
+
+      <div class="quest care">
+        <h3>🌸 Self-Care</h3>
+        <button onclick="completeCare()">Complete Self-Care</button>
+      </div>
+
+    </div>
+
+    <!-- RESET -->
+    <button class="reset" onclick="resetSystem()">RESET SYSTEM</button>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup hidden"></div>
+
   </div>
-
-  <p>🔥 Streak: <span id="streakText"></span> days</p>
-</div>
-
-<div class="panel">
-  <h3>MAIN QUESTS</h3>
-  <div id="mainQuests"></div>
-</div>
-
-<div class="panel">
-  <h3>SIDE QUEST (4 hrs)</h3>
-  <p id="sideQuestText"></p>
-  <button onclick="completeSideQuest()">Complete Side Quest</button>
-</div>
-
-<div class="panel">
-  <h3>❤️ TIME WITH LOVED ONES</h3>
-  <p id="loveTimer">00:00</p>
-  <button onclick="startLove()">Start</button>
-  <button onclick="stopLove()">Stop</button>
-</div>
-
-<div class="panel">
-  <h3>SYSTEM CONTROLS</h3>
-  <button onclick="resetDay()">RESET DAY</button><br>
-  <button class="danger" onclick="fullReset()">FULL RESET</button>
-  <div class="quote" id="quote"></div>
-</div>
-
-<!-- LEVEL UP OVERLAY -->
-<div id="levelUpOverlay">
-  <div id="levelUpText"></div>
-</div>
 
 <script src="script.js"></script>
 </body>
