@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self Upgrade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>BOREDOM</h1>
+    <p class="subtitle">System Status: Online</p>
+
+    <!-- LEVEL + XP -->
+    <div class="level-box">
+      <h2 id="levelTitle">Level 1</h2>
+      <div class="xp-bar">
+        <div id="xpFill"></div>
+      </div>
+      <p><span id="xpText">0</span> XP</p>
+    </div>
+
+    <!-- STREAK -->
+    <p class="streak">🔥 Streak: <span id="streakCount">0</span></p>
+
+    <!-- QUESTS -->
+    <div class="quests">
+
+      <div class="quest main">
+        <h3>⚔️ Main Quests</h3>
+
+        <button onclick="completeMain('study')">
+          📘 Complete Study Task
+        </button>
+
+        <button onclick="completeMain('coding')">
+          💻 Complete Coding Task
+        </button>
+      </div>
+
+      <div class="quest side">
+        <h3>🧩 Side Quest</h3>
+        <p id="sideQuestText">Loading...</p>
+        <button onclick="completeSide()">Complete Side Quest</button>
+      </div>
+
+      <div class="quest care">
+        <h3>🌸 Self-Care</h3>
+        <button onclick="completeCare()">Complete Self-Care</button>
+      </div>
+
+    </div>
+
+    <!-- RESET -->
+    <button class="reset" onclick="resetSystem()">RESET SYSTEM</button>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup hidden"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
